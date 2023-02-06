@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Django ChatterBot Example</title>
+</head>
+<body>
+  <h1>Django ChatterBot Example</h1>
+  <div id="chat-window">
+   
+    <div class="message">
+      {{ statement.text }}
+    </div>
+ 
+  </div>
+  <form action="{% url 'chat' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="text">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
